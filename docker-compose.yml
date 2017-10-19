@@ -12,3 +12,4 @@ services:
                 restart: always
                 #working_dir: $HOME/vas_app/
                 command: /home/run_startup_scripts.sh
+

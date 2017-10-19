@@ -24,4 +24,4 @@ RUN sed -i -e 's/8080/8070/g' /usr/local/tomcat/conf/server.xml \
 #       && a2enconf servername
 #RUN chmod +x /tmp/vas_app/run_startup_scripts.sh
 #CMD ["/tmp/vas_app/run_startup_scripts.sh"]
-EXPOSE 80 8070 8080 8090 9000
+#EXPOSE 80 8070 8080 8090 9000
