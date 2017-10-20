@@ -21,7 +21,3 @@ RUN cp ../vta*.jar /var/www/html/backend_jars/
 RUN cp -avr /tmp/vas_app/autoweb/dist/. /var/www/html/
 RUN sed -i -e 's/8080/8070/g' /usr/local/tomcat/conf/server.xml \
         && echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf \
-#       && a2enconf servername
-#RUN chmod +x /tmp/vas_app/run_startup_scripts.sh
-#CMD ["/tmp/vas_app/run_startup_scripts.sh"]
-#EXPOSE 80 8070 8080 8090 9000
