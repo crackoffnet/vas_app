@@ -1,15 +1,24 @@
 version: '2'
 services:
-        vas_app:
-                build: .
-                ports:
-                 - "8080:8080"
-                 - "8070:8070"
-                 - "9000:9000"
-                 - "10000:80"
-                volumes:
-                 - .:/home/
-                restart: always
-                #working_dir: $HOME/vas_app/
-                command: /home/run_startup_scripts.sh
-
+  vas_tsh_prod:
+    build: .
+    ports:
+     - "8080:8080"
+     - "8070:8070"
+     - "9000:9000"
+     - "10000:80"
+    volumes:
+     - .:/home/
+    restart: always
+    command: /home/run_startup_scripts.sh
+  vas_tsh_dev:
+    build: .
+    ports:
+     - "8081:8080"
+     - "8071:8070"
+     - "9001:9000"
+     - "10001:80"
+    volumes:
+     - .:/home/
+    restart: always
+    command: /home/run_startup_scripts.sh
