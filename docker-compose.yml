@@ -1,17 +1,28 @@
 version: '2'
 services:
   vas_tsh_prod:
+    container_name: vas_tsh_prod
     build: .
+    hostname: vasprod.local
+    command: --domain=vasprod.local --realm=vasprod.local
     ports:
-     - "8080:8080"
-     - "8070:8070"
-     - "9000:9000"
-     - "10000:80"
+      - "8080:8080"
+      - "8070:8070"
+      - "9000:9000"
+      - "10000:80"
     volumes:
-     - .:/home/
+      - .:/home/
     restart: always
     command: /home/run_startup_scripts.sh
+    networks:
+      vasprod:
+        aliases:
+          - vasprod.local
   vas_tsh_dev:
+    container_name: vas_tsh_dev
+    build: .
+    hostname: vasdev.local
+    command: --domain=vasdev.local --realm=vasdev.local
     build: .
     ports:
      - "8081:8080"
@@ -22,3 +33,5 @@ services:
      - .:/home/
     restart: always
     command: /home/run_startup_scripts.sh
+networks:
+  vasprod:
