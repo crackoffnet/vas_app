@@ -39,7 +39,7 @@ angular.module('testApp')
       /*make loading spinner visible when data is loading*/
       $scope.showloader = true;
 
-      httpService.get(ConstantsBCC.urlPrefixBcc + '/vta/vmenu/' + msisdn + '/' + start + '/' + end).then(function (res) {
+      httpService.get(ConstantsBCC.urlPrefixBcc + '/vta_vas/vmenu/' + msisdn + '/' + start + '/' + end).then(function (res) {
         //$log.info('Modal dismissed at: ' + new Date());
         $scope.getData = res.data;
 

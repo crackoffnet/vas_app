@@ -19,6 +19,6 @@ angular.module('testApp')
 
     return {
 
-      urlPrefixBcc: "http://localhost:8080"
+      urlPrefixBcc: "http://localhost:8091"
     };
   });
