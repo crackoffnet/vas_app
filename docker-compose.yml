@@ -42,7 +42,7 @@ services:
       - db
     command: /home/run_startup_scripts.sh
     networks:
-      vasdev:
+      vasprod:
         aliases:
           - vasdev
   db:
@@ -58,10 +58,10 @@ services:
       - MYSQL_USER=vasuser
       - MYSQL_PASSWORD=pass
     networks:
-      mysql:
+      vasprod:
         aliases:
           - mysql      
 networks:
   vasprod:
-  vasdev:
-  mysql:
+  #vasdev:
+  #mysql:
