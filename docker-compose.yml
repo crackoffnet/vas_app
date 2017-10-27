@@ -65,3 +65,4 @@ services:
 networks:
   vasprod:
   vasdev:
+  mysql:
