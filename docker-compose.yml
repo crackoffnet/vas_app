@@ -13,7 +13,7 @@ services:
       - "9000:9000"
       - "10000:80"
     volumes:
-      - .:/home/
+      - /var/www/html
     restart: always
     links:
       - db
@@ -26,7 +26,6 @@ services:
     container_name: vas_tsh_dev
     build: .
     hostname: vasdev
-    #command: --domain=vasdev --realm=vasdev
     build: .
     ports:
      - "8094:8093"
@@ -36,7 +35,7 @@ services:
      - "9001:9000"
      - "10001:80"
     volumes:
-     - .:/home/
+     - /var/www/html
     restart: always
     links:
       - db
@@ -57,6 +56,8 @@ services:
       - MYSQL_DATABASE=vasdb
       - MYSQL_USER=vasuser
       - MYSQL_PASSWORD=pass
+    volumes_from:
+      - vas_tsh_prod
     networks:
       local_connection:
         aliases:
