@@ -41,9 +41,15 @@ services:
     links:
       - db
     command: /home/run_startup_scripts.sh
+    networks:
+      vasdev:
+        aliases:
+          - vasdev
   db:
     container_name: mysql
     image: mysql
+    hostname: mysql
+    command: --domain=mysql --realm=mysql
     ports: 
       - "3306:3306"
     restart: always
@@ -52,5 +58,10 @@ services:
       - MYSQL_DATABASE=vasdb
       - MYSQL_USER=vasuser
       - MYSQL_PASSWORD=pass
+    networks:
+      mysql:
+        aliases:
+          - mysql      
 networks:
   vasprod:
+  vasdev:
