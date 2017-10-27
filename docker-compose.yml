@@ -48,7 +48,7 @@ services:
       - 3306
     restart: always
     environment:
-      MYSQL_ONETIME_PASSWORD: yes
+      MYSQL_ONETIME_PASSWORD=yes
       MYSQL_DATABASE: vasdb
       MYSQL_USER: vasuser
       MYSQL_PASSWORD: pass
