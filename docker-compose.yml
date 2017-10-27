@@ -4,7 +4,7 @@ services:
     container_name: vas_tsh_prod
     build: .
     hostname: vasprod
-    command: --domain=vasprod --realm=vasprod
+    #command: --domain=vasprod --realm=vasprod
     ports:
       - "8093:8093"
       - "8091:8091"
@@ -26,7 +26,7 @@ services:
     container_name: vas_tsh_dev
     build: .
     hostname: vasdev
-    command: --domain=vasdev --realm=vasdev
+    #command: --domain=vasdev --realm=vasdev
     build: .
     ports:
      - "8094:8093"
@@ -49,7 +49,6 @@ services:
     container_name: mysql
     image: mysql
     hostname: mysql
-    command: --domain=mysql --realm=mysql
     ports: 
       - "3306:3306"
     restart: always
