@@ -41,16 +41,16 @@ services:
     links:
       - db
     command: /home/run_startup_scripts.sh
-db:
-  container_name: mysql
-  image: mysql
-  ports: 
-    - 3306
-  restart: always
-  environment:
-    MYSQL_ONETIME_PASSWORD: yes
-    MYSQL_DATABASE: vasdb
-    MYSQL_USER: vasuser
-    MYSQL_PASSWORD: pass
+  db:
+    container_name: mysql
+    image: mysql
+    ports: 
+      - 3306
+    restart: always
+    environment:
+      MYSQL_ONETIME_PASSWORD: yes
+      MYSQL_DATABASE: vasdb
+      MYSQL_USER: vasuser
+      MYSQL_PASSWORD: pass
 networks:
   vasprod:
