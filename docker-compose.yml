@@ -4,7 +4,7 @@ services:
     container_name: vas_tsh_prod
     build: .
     hostname: vasprod
-    #command: --domain=vasprod --realm=vasprod
+    command: --domain=vasprod --realm=vasprod
     ports:
       - "8093:8093"
       - "8091:8091"
