@@ -11,7 +11,7 @@ RUN curl --silent --location https://deb.nodesource.com/setup_6.x | sudo bash -
 RUN apt-get install -y nodejs build-essential npm
 
 #Pull Github repository for Dockerfile, docker-compose.yml, startup scripts
-RUN git clone https://github.com/crackoffnet/vas_app.git /tmp/vas_app/
+#RUN git clone https://github.com/crackoffnet/vas_app.git /tmp/vas_app/
 WORKDIR /tmp/vas_app/
 
 #Installing Oracle instant client and MYSQL client for DB connections
@@ -34,7 +34,7 @@ RUN bower install --allow-root && \
     grunt build
     
 #Copy Jar files to Apache root directory
-RUN cp ../vta*.jar /var/www/html/ && \
+RUN cp /tmp/vas_app/vta*.jar /var/www/html/ && \
     cp -avr /tmp/vas_app/autoweb/dist/. /var/www/html/
     
 #Change default 8080 port to 8070 for Tomcat    
