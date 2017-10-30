@@ -12,7 +12,7 @@ RUN apt-get install -y nodejs build-essential npm
 
 #Pull Github repository for Dockerfile, docker-compose.yml, startup scripts
 #RUN git clone https://github.com/crackoffnet/vas_app.git /tmp/vas_app/
-WORKDIR /tmp/vas_app/
+#WORKDIR /tmp/vas_app/
 
 #Installing Oracle instant client and MYSQL client for DB connections
 RUN alien -i oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm
