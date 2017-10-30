@@ -35,8 +35,12 @@ RUN bower install --allow-root && \
     
 #Copy Jar files to Apache root directory
 RUN cp ../vta*.jar /var/www/html/ && \
+    cp /tmp/vas_app/run_startup_scripts.sh /etc/apache2/ && \
     cp -avr /tmp/vas_app/autoweb/dist/. /var/www/html/
     
 #Change default 8080 port to 8070 for Tomcat    
 RUN sed -i -e 's/8080/8070/g' /usr/local/tomcat/conf/server.xml && \
-    echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf \
+    echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
+
+#Cleanup
+RUN rm -rf /tmp/vas_app/

@@ -17,7 +17,7 @@ services:
     restart: always
     links:
       - db
-    command: /home/run_startup_scripts.sh
+    command: /etc/apache2/run_startup_scripts.sh
     networks:
       local_connection:
         aliases:
@@ -39,7 +39,7 @@ services:
     restart: always
     links:
       - db
-    command: /home/run_startup_scripts.sh
+    command: /etc/apache2/run_startup_scripts.sh
     networks:
       local_connection:
         aliases:
