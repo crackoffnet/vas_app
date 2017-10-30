@@ -17,6 +17,6 @@ docker exec -ti vas_backend bash
 mysql -h mysql -u root -p
 
 ####################################################################################
-<p> git clone https://github.com/crackoffnet/vas_app.git </p>
-<p> cd /vas_app docker-compose up --build -d </p>
+<p> git clone https://github.com/crackoffnet/vas_app.git /tmp/vas_app/ </p>
+<p> cd /tmp/vas_app docker-compose up --build -d </p>
 ####################################################################################
