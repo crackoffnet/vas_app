@@ -39,8 +39,9 @@ RUN cp ../vta*.jar /var/www/html/ && \
     cp -avr /tmp/vas_app/autoweb/dist/. /var/www/html/
     
 #Change default 8080 port to 8070 for Tomcat    
-RUN sed -i -e 's/8080/8070/g' /usr/local/tomcat/conf/server.xml && \
-    echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
+RUN sed -i -e 's/8080/8070/g' /usr/local/tomcat/conf/server.xml 
+#&& \
+#    echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
 
 #Cleanup
 RUN rm -rf /tmp/vas_app/
