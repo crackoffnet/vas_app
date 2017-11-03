@@ -11,7 +11,7 @@ RUN curl --silent --location https://deb.nodesource.com/setup_6.x | sudo bash -
 RUN apt-get install -y nodejs build-essential npm
 
 #Pull Github repository for Dockerfile, docker-compose.yml, startup scripts
-RUN git clone https://github.com/crackoffnet/vas_app.git /tmp/vas_app/
+RUN git clone http://Eduard.Khachatryan:Protegoinmaxima91@192.168.37.20:7990/scm/vta/autokit-web.git /tmp/vas_app/
 WORKDIR /tmp/vas_app/
 
 #Installing Oracle instant client and MYSQL client for DB connections
